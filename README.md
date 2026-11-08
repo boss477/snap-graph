@@ -1,5 +1,3 @@
-
-
 Project info
 
 **Use your preferred IDE**
@@ -24,6 +22,8 @@ npm i
 npm run dev
 ```
 
+For local Supabase configuration, copy `.env.example` to `.env` and set the project ID, publishable key, and URL for your Supabase project. Do not commit `.env` files or place private API credentials in `VITE_` variables; Vite exposes those values in browser code.
+
 **Edit a file directly in GitHub**
 
 **Use GitHub Codespaces**
@@ -46,8 +46,6 @@ This project is built with:
 
 ## How can I deploy this project?
 
-
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
