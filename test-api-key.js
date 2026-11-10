@@ -1,7 +1,11 @@
 // Simple Node.js script to test the Gemini API key
 // Run with: node test-api-key.js
 
-const API_KEY = "AIzaSyDjghcnRP4_WmY3HxkGZPnVJg-hMEbKtJw";
+const API_KEY = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+if (!API_KEY) {
+  console.error("Set GEMINI_API_KEY (or VITE_GEMINI_API_KEY) before running this script.");
+  process.exit(1);
+}
 
 async function testApiKey() {
   console.log('Testing Gemini API key:', API_KEY);
