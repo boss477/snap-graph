@@ -1,7 +1,11 @@
 // Simple Node.js script to list available Gemini models
 // Run with: node list-models.js
 
-const API_KEY = "AIzaSyDjghcnRP4_WmY3HxkGZPnVJg-hMEbKtJw";
+const API_KEY = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+if (!API_KEY) {
+  console.error("Set GEMINI_API_KEY (or VITE_GEMINI_API_KEY) before running this script.");
+  process.exit(1);
+}
 
 async function listModels() {
   console.log('Listing available Gemini models...');
